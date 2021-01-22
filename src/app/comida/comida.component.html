@@ -1,0 +1,35 @@
+<div class="main-container">
+
+  <div class="login-container" [formGroup] = "formComida">
+    <h2> Frutas</h2>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ex. Mango" formControlName= "nombre" >
+    </mat-form-field>
+
+    <!--<mat-form-field>
+      <mat-label>Categoria</mat-label>
+        <input matInput placeholder="Ex. acida,dulce, semiacida" formControlName= "categoria">
+    </mat-form-field>-->
+
+    <mat-form-field >
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName= "categoria">
+        <mat-option value="dulce" > Dulces </mat-option>
+        <mat-option value="acida"> Acida </mat-option>
+        <mat-option value="semiacida"> Semiácida </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+        <input type="text" matInput placeholder="Ex. esta fruta es color .. y sabe a.." formControlName= "descripcion" >
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="formComida.invalid" (click)="saveClick()">
+      Guardar Fruta
+    </button>
+  </div>
+</div>
